@@ -1,6 +1,15 @@
+import { useEffect } from "react"
+import { useParams } from "react-router-dom"
+
 const PokemonDetail = () => {
+const {pokemonId} = useParams()
+
+useEffect(()=>{
+  
+},[])
+
   return (
-    <div>PokemonDetail</div>
+    <main>PokemonDetail</main>
   )
 }
 export default PokemonDetail

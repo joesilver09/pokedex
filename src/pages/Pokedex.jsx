@@ -1,17 +1,16 @@
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { getAllPokemons } from "../services/pokemon";
 import PokemonList from "../components/pokedex/PokemonList";
+import usePokedex from "../hooks/usePokedex";
 
 const Pokedex = () => {
-  const [pokemons, setPokemons] = useState([]);
-  const { name } = useSelector((store) => store.trainer);
-
-  useEffect(() => {
-    getAllPokemons()
-      .then((data) => setPokemons(data))
-      .catch((err) => console.log(err));
-  }, []);
+  const {
+    name,
+    pokemonName,
+    setPokemonName,
+    pokemonType,
+    setPokemonType,
+    handleChange,
+    pokemonsByName,
+  } = usePokedex();
 
   return (
     <main>
@@ -21,15 +20,37 @@ const Pokedex = () => {
         </p>
         <form>
           <div>
-            <input placeholder="Search pokemon..." type="text" />
-            <button>Search</button>
+            <input
+              value={pokemonName}
+              onChange={handleChange(setPokemonName)}
+              placeholder="Search pokemon..."
+              type="text"
+            />
           </div>
-          <select>
+          <select className="text-sm" value={pokemonType} onChange={handleChange(setPokemonType)}>
             <option value="">All pokemons</option>
+            <option value="normal">Normal</option>
+            <option value="fire">Fire</option>
+            <option value="fighting">Fighting</option>
+            <option value="water">Water</option>
+            <option value="flying">Flying</option>
+            <option value="grass">Grass</option>
+            <option value="poison">Poison</option>
+            <option value="electric">Electric</option>
+            <option value="ground">Ground</option>
+            <option value="psychic">Psychic</option>
+            <option value="rock">Rock</option>
+            <option value="ice">Ice</option>
+            <option value="bug">Bug</option>
+            <option value="dragon">Dragon</option>
+            <option value="ghost">Ghost</option>
+            <option value="dark">Dark</option>
+            <option value="steel">Steel</option>
+            <option value="fairy">Fairy</option>
           </select>
         </form>
       </section>
-      <PokemonList pokemons={pokemons} />
+      <PokemonList pokemons={pokemonsByName} />
     </main>
   );
 };

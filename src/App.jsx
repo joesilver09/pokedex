@@ -6,8 +6,6 @@ import Pokedex from "./pages/Pokedex";
 import PokemonDetail from "./pages/PokemonDetail";
 import PrivateRoutes from "./components/auth/PrivateRoutes";
 
-//!TODO continuar video desde de crear carpeta pokedex dentro de components 9:40pm
-
 function App() {
   return (
     <Routes>
