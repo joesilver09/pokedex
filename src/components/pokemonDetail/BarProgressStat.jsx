@@ -8,12 +8,12 @@ const BarProgressStat = ({ stat }) => {
 
   return (
     <article>
-      <section className="flex justify-between px-1">
+      <section className="flex justify-between px-1 capitalize">
         <h5>{stat.name}</h5>
         <span>{stat.value}/255</span>
       </section>
-      <div className="h-6 bg-slate-300 founded-md">
-        <div style={{width: getPercentBarProgress(stat.value)}} className="h-full bg-gradient-to-r from-yellow-500 to-orange-500"></div>
+      <div className="h-4 bg-[#00000040] founded-md">
+        <div style={{width: getPercentBarProgress(stat.value)}} className="h-full bg-gradient-to-r from-[#FCD676] to-[#E6901E]"></div>
       </div>
     </article>
   );

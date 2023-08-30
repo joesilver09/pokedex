@@ -21,6 +21,30 @@ const bgStylePokemonType = {
     shadow: "bg-gradient-to-b from-shadow to-shadow/40",
   };
 
+  const bgTriGradient = {
+    normal: "bg-gradient-to-b from-normal via-normal/40 to-black/90",
+    fire: "bg-gradient-to-b from-fire via-fire/40 to-black/90",
+    fighting: "bg-gradient-to-b from-fighting via-fighting/40 to-black/90",
+    water: "bg-gradient-to-b from-water via-water/40 to-black/90",
+    flying: "bg-gradient-to-b from-flying via-flying/40 to-black/90",
+    grass: "bg-gradient-to-b from-grass via-grass/40 to-black/90",
+    poison: "bg-gradient-to-b from-poison via-poison/40 to-black/90",
+    electric: "bg-gradient-to-b from-electric via-electric/40 to-black/90",
+    ground: "bg-gradient-to-b from-ground via-ground/40 to-black/90",
+    psychic: "bg-gradient-to-b from-psychic via-psychic/40 to-black/90",
+    rock: "bg-gradient-to-b from-rock via-rock/40 to-black/90",
+    ice: "bg-gradient-to-b from-ice via-ice/40 to-black/90",
+    bug: "bg-gradient-to-b from-bug via-bug/40 to-black/90",
+    dragon: "bg-gradient-to-b from-dragon via-dragon/40 to-black/90",
+    ghost: "bg-gradient-to-b from-ghost via-ghost/40 to-black/90",
+    dark: "bg-gradient-to-b from-dark via-dark/40 to-black/90",
+    steel: "bg-gradient-to-b from-steel via-steel/40 to-black/90",
+    fairy: "bg-gradient-to-b from-fairy via-fairy/40 to-black/90",
+    unkown: "bg-gradient-to-b from-unkown via-unkown/40 to-black/90",
+    shadow: "bg-gradient-to-b from-shadow via-shadow/40 to-black/90",
+  };
+
+
   const borderStylePokemonType = {
     normal: "border-normal/70",
     fire: "border-fire/70",
@@ -69,4 +93,5 @@ const bgStylePokemonType = {
 
   export{bgStylePokemonType,
 borderStylePokemonType,
-flatBgStylePokemonType}
+flatBgStylePokemonType,
+bgTriGradient}

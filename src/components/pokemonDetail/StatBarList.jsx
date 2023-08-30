@@ -2,7 +2,7 @@ import BarProgressStat from "./BarProgressStat";
 
 const StatBarList = ({ stats }) => {
   return (
-    <section>
+    <section className="text-center">
       <h2>Stats</h2>
       <section>
         {stats?.map((stat) => (
