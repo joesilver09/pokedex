@@ -1,9 +1,14 @@
 import axios from "axios";
 
 export const getAllPokemons = async () => {
-  //! limit 1281
-  const URL = "https://pokeapi.co/api/v2/pokemon?limit=22";
+  const URL = "https://pokeapi.co/api/v2/pokemon?limit=1281";
   const { data } = await axios.get(URL);
+  return data.results;
+};
+
+export const getAllTypes = async () => {
+  const url = "https://pokeapi.co/api/v2/type/";
+  const { data } = await axios.get(url);
   return data.results;
 };
 
@@ -14,9 +19,8 @@ export const getPokemonsByType = async (pokemonType) => {
   return formatPokemons;
 };
 
-export const getPokemonById = async (pokemonId) =>{
- 
- const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonId}/`
+export const getPokemonById = async (pokemonId) => {
+  const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonId}/`;
   const { data } = await axios.get(pokemonUrl);
   const pokemon = {
     // data:data,
@@ -33,12 +37,11 @@ export const getPokemonById = async (pokemonId) =>{
     moves: data.moves,
   };
   return pokemon;
-
-}
+};
 
 export const getPokemonByUrl = async (pokemonUrl) => {
   const { data } = await axios.get(pokemonUrl);
- console.log(data)
+
   const pokemon = {
     id: data.id,
     name: data.name,

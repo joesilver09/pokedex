@@ -18,8 +18,20 @@ const PokemonDetail = () => {
     <main className="flex justify-center items-center">
       <article className="p-5">
         <header>
-          <div>
-            <img src={pokemonData?.image} alt="pokemon" />
+          <div className=" -bottom-[3.5rem] aspect-square max-h-[24rem]">
+            {pokemonData?.image ? (
+              <img
+                className="h-full w-full object-contain"
+                src={pokemonData?.image}
+                alt="pokemon"
+              />
+            ) : (
+              <img
+                className="h-full w-full object-contain"
+                src="images/missingimage.png"
+                alt="image unable"
+              />
+            )}
           </div>
         </header>
         <section>

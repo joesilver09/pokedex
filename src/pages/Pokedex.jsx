@@ -1,7 +1,17 @@
+import { useState } from "react";
 import PokemonList from "../components/pokedex/PokemonList";
 import usePokedex from "../hooks/usePokedex";
+import { paginateData } from "../utils/pagination";
+import Pagination from "../components/pokedex/Pagination";
+import { logout } from "../store/slices/trainer.slice";
+import { useDispatch } from "react-redux";
 
 const Pokedex = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const dispatch = useDispatch()
+ const handleLogout = () => {dispatch(logout())}
+
   const {
     name,
     pokemonName,
@@ -10,7 +20,13 @@ const Pokedex = () => {
     setPokemonType,
     handleChange,
     pokemonsByName,
+    types,
   } = usePokedex();
+
+  const { elementsInCurrentPage, lastPage, pagesInCurrentBlock } = paginateData(
+    pokemonsByName,
+    currentPage
+  );
 
   return (
     <main>
@@ -18,6 +34,8 @@ const Pokedex = () => {
         <p>
           <span className="text-red">Welcome {name}</span>
         </p>
+        <button
+        onClick={handleLogout}>logout</button>
         <form>
           <div>
             <input
@@ -27,30 +45,33 @@ const Pokedex = () => {
               type="text"
             />
           </div>
-          <select className="text-sm" value={pokemonType} onChange={handleChange(setPokemonType)}>
+          <select
+            className="text-sm"
+            value={pokemonType}
+            onChange={handleChange(setPokemonType)}
+          >
             <option value="">All pokemons</option>
-            <option value="normal">Normal</option>
-            <option value="fire">Fire</option>
-            <option value="fighting">Fighting</option>
-            <option value="water">Water</option>
-            <option value="flying">Flying</option>
-            <option value="grass">Grass</option>
-            <option value="poison">Poison</option>
-            <option value="electric">Electric</option>
-            <option value="ground">Ground</option>
-            <option value="psychic">Psychic</option>
-            <option value="rock">Rock</option>
-            <option value="ice">Ice</option>
-            <option value="bug">Bug</option>
-            <option value="dragon">Dragon</option>
-            <option value="ghost">Ghost</option>
-            <option value="dark">Dark</option>
-            <option value="steel">Steel</option>
-            <option value="fairy">Fairy</option>
+            {types.map((type) => (
+              <option key={type.name} className="capitalize" value={type.name}>
+                {type.name}
+              </option>
+            ))}
           </select>
         </form>
       </section>
-      <PokemonList pokemons={pokemonsByName} />
+      <Pagination
+        lastPage={lastPage}
+        pagesInCurrentBlock={pagesInCurrentBlock}
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+      />
+      <PokemonList pokemons={elementsInCurrentPage} />
+      <Pagination
+        lastPage={lastPage}
+        pagesInCurrentBlock={pagesInCurrentBlock}
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+      />
     </main>
   );
 };
