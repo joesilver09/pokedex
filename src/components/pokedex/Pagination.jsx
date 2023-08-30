@@ -23,12 +23,12 @@ const Pagination = ({
   const handleFirstPage = () => setCurrentPage(1);
   return (
     <ul className="flex justify-center gap-2 p-4">
-      {currentPage >= 2 && <li onClick={handleFirstPage}>{"<<"}</li>}
-      {currentPage >= 2 &&<li onClick={handlePreviousPage}>{"<"}</li>}
+      {currentPage >= 2 && <li onClick={handleFirstPage}><i className='bx bxs-chevrons-left text-xl'></i></li>}
+      {currentPage >= 2 &&<li onClick={handlePreviousPage}><i className='bx bxs-chevron-left text-xl'></i></li>}
       {pagesInCurrentBlock.map((page) => (
         <li
-          className={`p-2 ${
-            currentPage === page ? "text-white bg-slate-500" : ""
+          className={` border w-7 h-7 text-center border-black/20 font-medium rounded  ${
+            currentPage === page ? "rounded border-[#D93F3F] text-white bg-[#D93F3F] " : ""
           }`}
           key={page}
           onClick={() => setCurrentPage(page)}
@@ -37,8 +37,8 @@ const Pagination = ({
         </li>
       ))}
 
-{currentPage <= (lastPage -1) &&<li onClick={handleNextPage}>{">"}</li>}
-{currentPage <= (lastPage -1) &&<li onClick={handleLastPage}>{">>"}</li>}
+{currentPage <= (lastPage -1) &&<li onClick={handleNextPage}><i className='bx bxs-chevron-right text-xl'></i></li>}
+{currentPage <= (lastPage -1) &&<li onClick={handleLastPage}><i className='bx bxs-chevrons-right text-xl'></i></li>}
     </ul>
   );
 };

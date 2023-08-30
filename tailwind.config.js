@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        's900': '885px',
+        's1200': '1190px',
+      },
       colors: {
         normal: '#A8A979ff',
         fire: '#F18130ff',
