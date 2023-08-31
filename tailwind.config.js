@@ -6,9 +6,13 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'novasquare': 'Nova Square'
+
+      },
       screens: {
 
-        's600': '570px',
+        's600': '600px',
         's900': '885px',
         's1200': '1190px',
       },
@@ -33,6 +37,9 @@ export default {
         fairy: '#EB97A9ff',
         unkown: '#69A190ff',
         shadow: '#715899ff',
+        dfire: '#db630e',
+        dwater: '#2860ee',
+        dgrass: '#5bb030',
       },
     },
   },

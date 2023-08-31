@@ -27,7 +27,7 @@ const bgStylePokemonType = {
     fighting: "bg-gradient-to-b from-fighting via-fighting/40 to-black/90",
     water: "bg-gradient-to-b from-water via-water/40 to-black/90",
     flying: "bg-gradient-to-b from-flying via-flying/40 to-black/90",
-    grass: "bg-gradient-to-b from-grass via-grass/40 to-black/90",
+    grass: "bg-gradient-to-b from-grass via-grass/40 to-black/60",
     poison: "bg-gradient-to-b from-poison via-poison/40 to-black/90",
     electric: "bg-gradient-to-b from-electric via-electric/40 to-black/90",
     ground: "bg-gradient-to-b from-ground via-ground/40 to-black/90",

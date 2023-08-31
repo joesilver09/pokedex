@@ -1,0 +1,46 @@
+.text_ability_shadow {
+  text-shadow: -3px 0px 4px #00000080,
+    3px 0px 4px #00000080, 
+    0px -4px 4px #00000080,
+    -3px -3px 4px #00000080, 
+  
+    3px 0px 4px #00000080,
+    -3px 0px 4px #00000080, 
+    0px 4px 4px #00000080,
+    3px 3px 4px #00000080
+
+    ;
+  color: rgb(246, 216, 68);
+}
+
+.title_bordered {
+  -webkit-text-stroke: 0.7px #f8f8f8;
+  text-shadow: 0px 2px 4px rgb(0, 0, 0);
+}
+
+.subtitle_bordered {
+    background: linear-gradient(to right,  #00ff80, #0080ff, #8000ff, #00ff80, #0080ff, #8000ff, #ff0080, red);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: rgba(0, 0, 0, 0);
+  font-size: 36px;
+
+  text-shadow: 
+  -2px -2px 0px #000000;
+
+
+}
+
+.barfont {
+  color: white;
+
+  text-shadow: 
+  -2px 2px 0px #000000,
+    2px -2px 0px #000000, 
+    2px 2px 0px #000000,
+    0px -2px 0px #000000,
+    0px 2px 0px #000000,
+    2px 0px 0px #000000, 
+    -2px 0px 0px #000000,
+    -2px -2px 0px #000000;
+}
