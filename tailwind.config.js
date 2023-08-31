@@ -7,6 +7,8 @@ export default {
   theme: {
     extend: {
       screens: {
+
+        's600': '570px',
         's900': '885px',
         's1200': '1190px',
       },

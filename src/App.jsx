@@ -5,6 +5,7 @@ import Page404 from "./pages/Page404";
 import Pokedex from "./pages/Pokedex";
 import PokemonDetail from "./pages/PokemonDetail";
 import PrivateRoutes from "./components/auth/PrivateRoutes";
+import HeaderPokeball from "./components/layout/HeaderPokeball";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <Route path="/" element={<Home />} />
 
       <Route element={<PrivateRoutes />}>
-        <Route path="pokedex" element={<Pokedex />} />
+        
+        <Route path="pokedex" element={<HeaderPokeball><Pokedex /></HeaderPokeball>} />
         <Route path="pokedex/:pokemonId" element={<PokemonDetail />} />
       </Route>
 

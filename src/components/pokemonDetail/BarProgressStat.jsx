@@ -8,11 +8,11 @@ const BarProgressStat = ({ stat }) => {
 
   return (
     <article>
-      <section className="flex justify-between px-1 capitalize">
+      <section className="flex justify-between font-medium text-base s600:text-lg px-1 capitalize">
         <h5>{stat.name}</h5>
         <span>{stat.value}/255</span>
       </section>
-      <div className="h-4 bg-[#00000040] founded-md">
+      <div className="h-3 s600:h-5 bg-[#00000040] founded-md">
         <div style={{width: getPercentBarProgress(stat.value)}} className="h-full bg-gradient-to-r from-[#FCD676] to-[#E6901E]"></div>
       </div>
     </article>
